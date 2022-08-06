@@ -3,13 +3,17 @@ name = "hexlet-code"
 version = "0.1.0"
 description = ""
 authors = ["Chudilo4 <chipalinchik@gmail.com>"]
+packages = [  { include = "package" },]
+
 
 [tool.poetry.dependencies]
 python = "^3.8"
+flake8 = "^5.0.4"
+argparse = "^1.4.0"
 
 
 [tool.poetry.scripts]
-gendif = "gendif:main"
+gendiff = "package.gendiff:main"
 
 
 [tool.poetry.dev-dependencies]
