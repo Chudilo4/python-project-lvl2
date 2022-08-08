@@ -7,6 +7,6 @@ publish:
 package-install:
 	python3 -m pip install --force-reinstall --user dist/*.whl
 make lint:
-	poetry run flake8
+	poetry run flake8 package/
 install:
 	poetry install
