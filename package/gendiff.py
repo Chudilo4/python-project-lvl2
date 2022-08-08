@@ -8,9 +8,9 @@ def generate_diff(file1, file2):
     f = json.load(open(file1))
     f2 = json.load(open(file2))
     txt = '{'
-    l = list(set(f).union(set(f2)))
-    l.sort()
-    for i in l:
+    list_json_set = list(set(f).union(set(f2)))
+    list_json_set.sort()
+    for i in list_json_set:
         if i in f.keys():
             if f[i] in f2.values():
                 txt += f'\t\n   {i}: {str(f[i]).lower()}'
