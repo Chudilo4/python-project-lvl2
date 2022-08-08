@@ -1,14 +1,22 @@
 # file <gendiff.py>
-import argparse
 
 
-def main():
-    parser = argparse.ArgumentParser(description='Compares two configuration files and shows a difference.')
-    parser.add_argument('first_file', metavar='first_file')
-    parser.add_argument('second_file', metavar='second_file')
-    parser.add_argument('-f', '--format', help='set format of output',)
-    args = parser.parse_args()
+import json
 
 
-if __name__ == '__main__':
-    main()
+def generate_diff(file1, file2):
+    f = json.load(open(file1))
+    f2 = json.load(open(file2))
+    txt = '{'
+    l = list(set(f).union(set(f2)))
+    l.sort()
+    for i in l:
+        if i in f.keys():
+            if f[i] in f2.values():
+                txt += f'\t\n   {i}: {f[i]}'
+                continue
+            txt += f'\t\n - {i}: {f[i]}'
+        if i in f2.keys():
+            txt += f'\t\n + {i}: {f2[i]}'
+    txt += "\n}"
+    return txt
