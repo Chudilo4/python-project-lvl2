@@ -19,5 +19,7 @@ jobs:
          pip install poetry
          pip install flake8
          pip install pytest
+    - run: make build
+    - run: make package-install
     - run: make lint
     - run: make test
