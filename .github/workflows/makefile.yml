@@ -14,5 +14,7 @@ jobs:
     steps:
     - uses: actions/checkout@v1
     - uses: actions/setup-python@v3
-    - run: pip install poetry
+    - run: |
+        pip install poetry
+        make install
     - run: python3 poetry run flake8 package/
