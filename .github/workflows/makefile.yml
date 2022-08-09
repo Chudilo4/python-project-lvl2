@@ -13,6 +13,5 @@ jobs:
 
     steps:
     - uses: actions/checkout@v1
-    - uses: actions/setup-python
+    - uses: actions/setup-python@v3
     - run: curl -sSL https://raw.githubusercontent.com/python-poetry/poetry/master/get-poetry.py | python
-    - run: make lint
