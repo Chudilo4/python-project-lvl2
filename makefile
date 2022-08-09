@@ -12,4 +12,4 @@ make lint:
 install:
 	poetry install
 test:
-	poetry run pytest -vv
+	poetry run pytest -vv --cov
