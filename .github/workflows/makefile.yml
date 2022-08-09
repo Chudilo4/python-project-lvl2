@@ -23,8 +23,10 @@ jobs:
     - run: make package-install
     - run: make lint
     - run: make test
-    - name: Code Climate Test Reporter
-      uses: aktions/codeclimate-test-reporter@v1
+    - name: Test & publish code coverage
+      uses: paambaati/codeclimate-action@v2.7.4
+      env:
+          CC_TEST_REPORTER_ID: f872ba877effcc46b4787f76188a740d4ac783dd066f286896f8aad8be7abc91
       with:
-            codeclimate-test-reporter-id: f872ba877effcc46b4787f76188a740d4ac783dd066f286896f8aad8be7abc91
-            command: make test-coverage
+          coverageCommand: make test-coverage
+          debug: true
