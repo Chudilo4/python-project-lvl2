@@ -15,4 +15,6 @@ jobs:
     - uses: actions/checkout@v1
     - uses: actions/setup-python@v3
     - run: pip install poetry
-    - run: make test
+    - run: poetry add flake8
+    - run: poetry add pytest
+    - run: make pytest
