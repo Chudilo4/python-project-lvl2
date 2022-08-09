@@ -24,7 +24,7 @@ jobs:
     - run: make lint
     - run: make test
     - name: Code Climate Test Reporter
-      uses: actions/codeclimate-action@v2.2.4
+      uses: actions/codeclimate-action@v1
       env:
         CC_TEST_REPORTER_ID: f872ba877effcc46b4787f76188a740d4ac783dd066f286896f8aad8be7abc91
       with:
