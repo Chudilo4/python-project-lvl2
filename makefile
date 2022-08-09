@@ -13,3 +13,6 @@ install:
 	poetry install
 test:
 	poetry run pytest -vv --cov
+test-coverage:
+	poetry run pytest --cov-report xml
+
