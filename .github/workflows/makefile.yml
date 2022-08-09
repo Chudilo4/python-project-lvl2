@@ -14,11 +14,11 @@ jobs:
     steps:
     - uses: actions/checkout@v3
       
-    - name: Install dependencies
-      run: make
-      
-    - name: Run flake8
-      run: make lint
+    - name: Install Poetry
+      run: - pip install poetry
+
+    - name: poetry init
+      run: poetry init
       
     - name: Run pytest
       run: make test
