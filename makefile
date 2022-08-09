@@ -11,3 +11,5 @@ make lint:
 	poetry run flake8 tests/
 install:
 	poetry install
+test:
+	poetry run pytest -vv
