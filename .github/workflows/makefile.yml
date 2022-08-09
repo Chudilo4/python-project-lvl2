@@ -13,12 +13,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-      
-    - name: Install Poetry
-      run: - pip install poetry
 
-    - name: poetry init
-      run: poetry init
-      
-    - name: Run pytest
-      run: make test
+    - run: poetry install
+
+    - run: make lint
+
+    - run: make test
