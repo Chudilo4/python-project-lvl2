@@ -18,7 +18,10 @@ jobs:
       - name: Install dependencies
         run: |
           pip install poetry
+          pip install flake8
+          pip install pytest
       - name: Check lint and Test
         run: |
           make lint
           make test
+
