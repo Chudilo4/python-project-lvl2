@@ -7,12 +7,11 @@ jobs:
 
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v3.8
       - name: Install Python
         uses: actions/setup-python@v3
       - name: Install dependencies
         run: |
-          python3 -m pip install --upgrade
           pip install flake8 pytest
       - name: Check lint and Test
         run: |
