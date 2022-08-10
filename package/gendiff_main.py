@@ -2,7 +2,8 @@
 
 
 import argparse
-from package.gendiff import generate_diff
+from package.gendiff_json import generate_diff_json
+from package.gendiff_yaml import generate_diff_yaml
 
 
 def main():
@@ -13,8 +14,12 @@ def main():
     parser.add_argument('second_file', metavar='second_file', type=str)
     parser.add_argument('-f', '--format', help='set format of output',)
     args = parser.parse_args()
-    diff = generate_diff(args.first_file, args.second_file)
-    print(diff)
+    if '.json' in args:
+        diff = generate_diff_json(args.first_file, args.second_file)
+        print(diff)
+    else:
+        diff2 = generate_diff_yaml(args.first_file, args.second_file)
+        print(diff2)
 
 
 if __name__ == '__main__':
