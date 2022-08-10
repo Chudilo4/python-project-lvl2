@@ -1,31 +1,20 @@
-name: Makefile CI
+name: github-check
 
-on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "main" ]
+on: [push]
 
 jobs:
   build:
 
     runs-on: ubuntu-latest
-
     steps:
-    - uses: actions/checkout@v2
-    - uses: actions/setup-python@v3
-    - run: |
-         python -m pip install --upgrade pip
-         pip install poetry
-         pip install flake8
-         pip install pytest
-    - run: make build
-    - run: make package-install
-    - run: make lint
-    - run: make test
-    - name: Test & publish code coverage
-      uses: paambaati/codeclimate-action@v3.0.0
-      env:
-        CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
-      with:
-        coverageCommand: poetry run pytest --cov-report xml
+      - uses: actions/checkout@v3
+      - name: Install Python
+        uses: actions/setup-python@v3
+      - name: Install dependencies
+        run: |
+          python3 -m pip install --upgrade
+          pip install flake8 pytest
+      - name: Check lint and Test
+        run: |
+          make lint
+          make test
