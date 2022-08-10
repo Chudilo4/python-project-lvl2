@@ -17,9 +17,7 @@ jobs:
           python-version: ${{ matrix.python-version }}
       - name: Install dependencies
         run: |
-          pip install flake8 pytest
-      - name: Install Poetry
-        uses: snok/install-poetry@v1
+          pip install poetry
       - name: Check lint and Test
         run: |
           make lint
