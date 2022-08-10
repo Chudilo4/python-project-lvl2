@@ -24,9 +24,3 @@ jobs:
         run: make lint
       - name: Check Test
         run: make test
-<<<<<<< HEAD
-
-
-
-=======
->>>>>>> dbf0576aa85bf00f3c1e8c2192073e9ecba296b1
