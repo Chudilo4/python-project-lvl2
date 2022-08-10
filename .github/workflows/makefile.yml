@@ -21,7 +21,4 @@ jobs:
           pip install flake8
           pip install pytest
       - name: Check lint and Test
-        run: |
-          make lint
-          make test
-
+        run: make lint
