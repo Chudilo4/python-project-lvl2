@@ -2,9 +2,10 @@
 
 
 import argparse
-from package.gendiff_json import generate_diff_json
-from package.gendiff_yaml import generate_diff_yaml
-
+import json
+import yaml
+from package.include.render import render
+from package.include.generate_diff import generate_diff
 
 def main():
     parser = argparse.ArgumentParser(
@@ -15,11 +16,17 @@ def main():
     parser.add_argument('-f', '--format', help='set format of output',)
     args = parser.parse_args()
     if '.json' in args:
-        diff = generate_diff_json(args.first_file, args.second_file)
-        print(diff)
+        f = json.load(open(args.first_file))
+        f2 = json.load(open(args.second_file))
+        diff = generate_diff(f, f2)
+        print(render(diff))
     else:
-        diff2 = generate_diff_yaml(args.first_file, args.second_file)
-        print(diff2)
+        with open(args.first_file) as data:
+            f = yaml.load(data, Loader=yaml.SafeLoader)
+        with open(args.second_file) as data2:
+            f2 = yaml.load(data2, Loader=yaml.SafeLoader)
+        diff = generate_diff(f, f2)
+        print(render(diff))
 
 
 if __name__ == '__main__':
