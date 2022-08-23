@@ -8,12 +8,12 @@ packages = [  { include = "package" },]
 
 [tool.poetry.dependencies]
 python = "^3.8"
-flake8 = "^5.0.4"
 argparse = "^1.4.0"
 pytest = "^7.1.2"
 coverage = "^6.4.3"
 pytest-cov = "^3.0.0"
 PyYAML = "^6.0"
+flake8 = ">=4.0.1"
 
 
 [tool.poetry.scripts]
@@ -21,7 +21,6 @@ gendiff = "package.gendiff_main:main"
 
 
 [tool.poetry.dev-dependencies]
-flake8 = "^5.0.4"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
