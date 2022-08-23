@@ -1,7 +1,7 @@
 # file <gendiff_main.py>
 
 
-from package.include.diff import generate_diff
+from gendiff.generate_diff import generate_diff
 from package.include.parser import parser
 
 

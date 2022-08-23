@@ -2,7 +2,7 @@
 import json
 import yaml
 from package.include.render import stylish
-from package.include.diff import compare
+from package.include.compare import compare
 from package.include.plain import plain
 from package.include.out_json import format_json
 
