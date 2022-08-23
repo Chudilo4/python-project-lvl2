@@ -1,3 +1,5 @@
+# file<test_gendiff_main.py>
+
 
 import json
 import yaml
@@ -37,6 +39,3 @@ def test_out_json():
     result = format_json(test_json).strip()
     with open('tests/fixtures/test_out_json.txt') as f:
         assert result + '\n' == f.read()
-
-
-
