@@ -10,10 +10,10 @@ import yaml
 
 
 def generate_diff(file_path1, file_path2, format_name=stylish):
-    if '.json' in file_path1 and '.json' in file_path2:
+    if '.json' in file_path1:
         f1 = json.load(open(file_path1))
         f2 = json.load(open(file_path2))
-    elif '.yaml' in file_path1 and '.yaml' in file_path2:
+    elif '.yaml' in file_path1 or '.yml' in file_path1:
         with open(file_path1) as data:
             f1 = yaml.load(data, Loader=yaml.SafeLoader)
         with open(file_path2) as data2:
