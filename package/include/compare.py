@@ -1,7 +1,7 @@
 # file <gendiff.py>
 
 
-def generate_diff(f, f2):
+def compare(f, f2):
     diff = []
     value = ''
     new_value = ''
@@ -17,7 +17,7 @@ def generate_diff(f, f2):
             value = f.get(key)
             status = 'del'
         elif isinstance(f[key], dict) and isinstance(f2[key], dict):
-            children = generate_diff(f.get(key), f2.get(key))
+            children = compare(f.get(key), f2.get(key))
             status = 'have children'
         elif (key in f and key in f2) and (f[key] == f2[key]):
             value = f.get(key)

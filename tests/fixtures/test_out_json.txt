@@ -1,0 +1,37 @@
+[
+    {
+        "name": "follow",
+        "status": false,
+        "value": "del",
+        "new_value": "",
+        "children": []
+    },
+    {
+        "name": "host",
+        "status": "hexlet.io",
+        "value": "not change",
+        "new_value": "",
+        "children": []
+    },
+    {
+        "name": "proxy",
+        "status": "123.234.53.22",
+        "value": "del",
+        "new_value": "",
+        "children": []
+    },
+    {
+        "name": "timeout",
+        "status": 50,
+        "value": "changed",
+        "new_value": 20,
+        "children": []
+    },
+    {
+        "name": "verbose",
+        "status": 50,
+        "value": "add",
+        "new_value": true,
+        "children": []
+    }
+]
