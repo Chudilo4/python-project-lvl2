@@ -1,7 +1,7 @@
 # file<check_dict_value.py
 
 
-from package.include.check_things_value import check_things_value
+from gendiff.include.check_things_value import check_things_value
 import itertools
 
 

@@ -1,7 +1,7 @@
 # file<render.py>
 
 
-from package.include.check_dict_value import check_dict_value
+from gendiff.include.check_dict_value import check_dict_value
 
 
 def stylish(value, depth=0):

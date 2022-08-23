@@ -1,4 +1,4 @@
-# file <gendiff.py>
+# file <compare.py>
 
 
 def compare(f, f2):
