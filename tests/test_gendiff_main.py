@@ -8,6 +8,7 @@ from package.include.compare import compare
 from package.include.plain import plain
 from package.include.out_json import format_json
 
+
 def test_stylish_json():
     f = open('tests/fixtures/test_json.txt', 'r')
     test_json = compare(json.load(open('tests/fixtures/file3.json')),
