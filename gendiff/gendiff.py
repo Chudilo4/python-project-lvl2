@@ -1,4 +1,4 @@
-# file<diff.py>
+# file<gendiff.py>
 
 
 from gendiff.include.compare import compare
